@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+
+	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
+	<constant name="struts.devMode" value="true" />
+	<package name="com.internousdev.whisker.action" extends="struts-default">
+
+		<action name="IndexAction" class="com.internousdev.whisker.action.IndexAction" method="execute">
+			<result name="success">toHome.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+
+		<action name="SignupAction" class="com.internousdev.whisker.action.SignupAction" method="execute">
+			<result name="success">signup.jsp</result>
+		</action>
+
+		<action name="SignupConfirmAction" class="com.internousdev.whisker.action.SignupConfirmAction" method="execute">
+			<result name="success">signupConfirm.jsp</result>
+			<result name="error">signup.jsp</result>
+		</action>
+
+		<action name="SignupCompleteAction" class="com.internousdev.whisker.action.SignupCompleteAction" method="execute">
+			<result name="success">signupComplete.jsp</result>
+			<result name="error">signup.jsp</result>
+		</action>
+
+		<action name="LoginAction" class="com.internousdev.whisker.action.LoginAction" method="execute">
+			<result name="success">toHome.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+		<action name="LogoutAction" class="com.internousdev.whisker.action.LogoutAction" method="execute">
+			<result name="success">login.jsp</result>
+		</action>
+
+		<action name="HomeAction" class="com.internousdev.whisker.action.HomeAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<action name="TweetAction" class="com.internousdev.whisker.action.TweetAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+		<action name="LikeAction" class="com.internousdev.whisker.action.LikeAction" method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+	</package>
+</struts>
