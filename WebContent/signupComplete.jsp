@@ -10,10 +10,13 @@
 		<title>新規登録完了</title>
 	</head>
 	<body>
+
 		<h1 class="subTitle">Whiskerへようこそ！</h1>
 		<br>
 		<a href="HomeAction" class="link">
 			ホームへ
 		</a>
+
+
 	</body>
 </html>

@@ -33,7 +33,9 @@ public class SignupCompleteAction extends ActionSupport implements SessionAware{
 
 				UserUtil.copyDefaultPhoto(user.getId());
 			}
-		}
+		}/*else{
+
+		}*/
 
 		session.remove("signupDto");
 

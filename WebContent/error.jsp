@@ -5,6 +5,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="refresh" content="3; URL='IndexAction'"/>
+
+		<link rel="stylesheet" href="./css/style.css">
 		<title>WHISKER ERROR</title>
 	</head>
 	<body>

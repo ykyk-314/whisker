@@ -7,13 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/accountList.css">
 <title>followView</title>
 </head>
 <body>
 
 	<jsp:include page="header.jsp" />
 
-	フォロー一覧
+	<div class="subTitle">フォロー一覧</div>
 
 	<ul>
 		<s:iterator value="#session.follows">

@@ -3,10 +3,13 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <div id="profile">
 
-	<ul class="prof">
-		<li class="contents myImage"><img
-			src="<s:property value='%{#session.profile.photoPath}' />" /></li>
+<div class="myImage"><img
+			src="<s:property value='%{#session.profile.photoPath}' />" /></div>
 		<!-- プロフィール画像 -->
+
+
+	<ul class="prof">
+
 		<li class="contents"><s:property value="%{#session.profile.name}" /></li>
 		<!-- アカウント名 -->
 		<li class="contents"><s:property

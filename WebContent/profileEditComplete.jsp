@@ -5,13 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="1; URL='HomeAction'" />
+
 <link rel="stylesheet" href="./css/style.css">
-<title>profileEdit complete</title>
+<link rel="stylesheet" href="./css/profile.css">
+<title>WHISKER profileEdit complete</title>
 </head>
 <body>
 
 	<jsp:include page="header.jsp" />
-	編集完了
 
+
+	<div class="subTitle">編集が完了しました。</div>
 </body>
 </html>

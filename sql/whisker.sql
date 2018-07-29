@@ -20,11 +20,11 @@ create table users(
 
 insert into users(login_id, password, name, created_at, updated_at) values
 ("guest", "guest", "ゲストユーザー",  now(), now()),
-("a", "a", "Aの紹介文", now(), now()),
-("b", "b", "Bの紹介文", now(), now()),
-("c", "c", "Cの紹介文", now(), now()),
-("d", "d", "Dの紹介文", now(), now()),
-("e", "e", "Eの紹介文", now(), now());
+("a", "a", "ユーザーA", now(), now()),
+("b", "b", "ユーザーB", now(), now()),
+("c", "c", "ユーザーC", now(), now()),
+("d", "d", "ユーザーD", now(), now()),
+("e", "e", "ユーザーE", now(), now());
 
 -- ツイート
 create table tweets(

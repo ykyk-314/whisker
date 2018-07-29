@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+.subTitle {
+	text-align: center;
+	font-size: 30px;
+	color: #35ceaf;
+}
+
+.listBox{
+	list-style:none;
+	font-size:20px;
+}
+
+.list{
+	margin-left:50px;
+	margin-top:10px;
+	background-color:#fff;
+	width:400px;
+	height:50px;
+	border-radius:5px;
+}
+
+.users{
+	color:#800040;
+	text-decoration:none;
+	line-height:50px;
+
+	background-color:#f7f7f7;
+	width:100%;
+	height:50px;
+	border-radius:5px;
+
+}
