@@ -5,7 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="refresh" content="0; URL='IndexAction'" />
-		<title>twitter demo</title>
+		<title>WHISKER</title>
 	</head>
 	<body>
 

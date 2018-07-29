@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.internousdev.whisker.dto.UserDTO;
 import com.internousdev.whisker.util.DBConnector;
@@ -164,6 +166,101 @@ public class UserDAO {
 			if (resultSet.next()){
 				result = toDto(resultSet);
 			}
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		try{
+			connection.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	public UserDTO select(int userId){
+
+		Connection connection = DBConnector.getConnection();
+
+		String sql= "SELECT * FROM users WHERE id = ?";
+
+		UserDTO result = null;
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, userId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()){
+				result = toDto(resultSet);
+			}
+
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		try{
+			connection.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	public List<UserDTO> searchByName(String name, int ignoreUserId){
+
+		Connection connection = DBConnector.getConnection();
+
+		String sql= "SELECT * FROM users WHERE name LIKE '%" + name + "%' AND id NOT IN (" + ignoreUserId + ")";
+
+		List<UserDTO> result = new ArrayList<UserDTO>();
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+			System.out.println(preparedStatement.toString());
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()){
+				UserDTO dto = toDto(resultSet);
+				result.add(dto);
+			}
+
+		}catch(SQLException e){
+			e.printStackTrace();
+			result = null;
+		}
+
+		try{
+			connection.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	public boolean update(int id, String name, String introductions) {
+
+		System.out.println("update");
+		Connection connection = DBConnector.getConnection();
+
+		String sql= "UPDATE users SET name = ?, introductions = ? WHERE id = ?";
+
+		boolean result = false;
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, introductions);
+			preparedStatement.setInt(3, id);
+
+			System.out.println(preparedStatement.toString());
+			result = preparedStatement.executeUpdate() > 0;
 
 		}catch(SQLException e){
 			e.printStackTrace();

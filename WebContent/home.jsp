@@ -1,19 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>twitter demo</title>
-	</head>
-	<body>
-		Home
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" >
+<link rel="stylesheet" href="./css/style.css">
+<title>WHISKER HOME</title>
+</head>
+<body>
+	<jsp:include page="header.jsp" />
+	<div id="main" class="cf">
 
-		<jsp:include page="header.jsp" />
-		<jsp:include page="profile.jsp" />
-		<jsp:include page="tweetField.jsp" />
-		<jsp:include page="tweetView.jsp" />
-		<%-- <jsp:include page="footer.jsp" /> --%>
+		<div id="sub_column">
+			<jsp:include page="profile.jsp" />
+		</div>
+		<!-- notImg  <i class="far fa-user-circle"></i> -->
 
-	</body>
+		<div id="main_column">
+			<jsp:include page="tweetField.jsp" />
+			<jsp:include page="tweetView.jsp" />
+		</div>
+
+	</div>
+	<%-- <jsp:include page="footer.jsp" /> --%>
+
+
+</body>
 </html>

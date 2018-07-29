@@ -48,7 +48,7 @@ public class TweetDAO {
 
 		Connection connection = DBConnector.getConnection();
 
-		String sql= "SELECT t.id, t.user_id, t.content, t.like_count, t.created_at, t.updated_at, u.name FROM tweets t LEFT JOIN users u ON t.user_id = u.id WHERE t.user_id = ?";
+		String sql= "SELECT t.id, t.user_id, t.content, t.like_count, t.created_at, t.updated_at, u.name FROM tweets t LEFT JOIN users u ON t.user_id = u.id WHERE t.user_id = ? ORDER BY t.id DESC";
 
 		List<TweetDTO> result = new ArrayList<>();
 

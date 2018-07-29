@@ -12,17 +12,19 @@ create table users(
 	login_id varchar(16) unique not null comment "ログインID",
 	password varchar(16) not null comment "パスワード",
 	name varchar(100) not null comment "表示名",
-	introductions varchar(500) not null default "" comment "紹介文",
+	introductions varchar(500) not null default "紹介文" comment "紹介文",
 	logined tinyint not null default 0 comment "ログインフラグ",
 	created_at datetime not null comment "作成日",
 	updated_at datetime not null comment "更新日"
 );
 
-insert into users values
-(1, "guest", "guest", "ゲスト", "紹介文", 0, now(), now()),
-(2, "a", "a", "aaa", "introductions", 0, now(), now()),
-(3, "b", "b", "bbb", "introductions", 0, now(), now()),
-(4, "c", "c", "ccc", "introductions", 0, now(), now());
+insert into users(login_id, password, name, created_at, updated_at) values
+("guest", "guest", "ゲストユーザー",  now(), now()),
+("a", "a", "Aの紹介文", now(), now()),
+("b", "b", "Bの紹介文", now(), now()),
+("c", "c", "Cの紹介文", now(), now()),
+("d", "d", "Dの紹介文", now(), now()),
+("e", "e", "Eの紹介文", now(), now());
 
 -- ツイート
 create table tweets(

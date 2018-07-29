@@ -4,16 +4,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-		<link rel="stylesheet" href="./css/style.css">
-		<link rel="stylesheet" href="./css/form.css">
-		<title>新規登録完了</title>
+		<meta http-equiv="refresh" content="3; URL='IndexAction'"/>
+		<title>WHISKER ERROR</title>
 	</head>
 	<body>
-		<h1 class="subTitle">Whiskerへようこそ！</h1>
-		<br>
-		<a href="HomeAction" class="link">
-			ホームへ
-		</a>
+		エラーが発生しました。
+		3秒後に最初のページに戻ります。
 	</body>
 </html>

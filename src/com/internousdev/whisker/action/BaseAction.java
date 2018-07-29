@@ -12,15 +12,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BaseAction  extends ActionSupport implements SessionAware {
 
 	protected Map<String, Object> session;
-	protected Map<String, List<String>> error;
+	protected Map<String, List<String>> error = new HashMap<>();
 
 	protected void putError(String key, String value){
 
 		List<String> list = null;
-
-		if (error == null){
-			error = new HashMap<>();
-		}
 
 		if (error.containsKey(key)){
 			list = error.get(key);
@@ -42,25 +38,19 @@ public class BaseAction  extends ActionSupport implements SessionAware {
 			session.remove("error");
 		}
 
-		if (error != null){
-			error.clear();
-		}
+		error.clear();
 	}
 
 	protected void printError(){
-		if (error != null){
-			System.out.println("エラー一覧:\n" + error.toString());
-		}else{
-			System.out.println("エラー一覧");
-		}
+		System.out.println("エラー一覧:\n" + error.toString());
 	}
 
 	protected boolean isError(){
-		if (error != null){
-			return error.size() > 0;
-		}else{
-			return false;
-		}
+		return error.size() > 0;
+	}
+
+	protected boolean isError(String key){
+		return error.containsKey(key);
 	}
 
 	public Map<String, List<String>> getError(){
@@ -70,5 +60,14 @@ public class BaseAction  extends ActionSupport implements SessionAware {
 	@Override
 	public void setSession(Map<String, Object> session){
 		this.session = session;
+
+		if (session.containsKey("action")) {
+			String action = (String)session.get("action");
+			session.put("preAction", action);
+		}else {
+			session.put("preAction", "");
+		}
+
+		session.put("action", this.getClass().getSimpleName());
 	}
 }
