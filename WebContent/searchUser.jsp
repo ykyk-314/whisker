@@ -16,18 +16,24 @@
 
 	<div class="subTitle">ユーザー検索結果</div>
 
-	<ul class="listBox">
-		<s:iterator value="#session.search">
+	<s:if test="%{#session.search.isEmpty()}">
+		<br>
+			検索結果はありません
+		</s:if>
 
-			<li class="list"><a
-				href="<s:url action='HomeAction'>
-					<s:param name='userId' value='id'/></s:url>" class="users">
-					<s:property value="name"/>
-				</a>
-			</li>
+	<s:else>
 
-		</s:iterator>
-	</ul>
+		<ul class="listBox">
+			<s:iterator value="#session.search">
 
+				<li class="list"><a
+					href="<s:url action='HomeAction'>
+					<s:param name='userId' value='id'/></s:url>"
+					class="users"> <s:property value="name" />
+				</a></li>
+
+			</s:iterator>
+		</ul>
+	</s:else>
 </body>
 </html>

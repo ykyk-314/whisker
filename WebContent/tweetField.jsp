@@ -5,8 +5,16 @@
 
 	<s:if test="%{#session.user.id == #session.profile.id}">
 		<s:form action="TweetAction">
-			<s:textfield name="message" class="text" />
+			<s:textarea name="message" class="text" />
 			<s:submit value="MEW" class="submit_btn" />
 		</s:form>
+
+		<!-- エラーの表示 -->
+		<s:if test="%{#session.error.contaionsKey('tweet')}">
+			<s:iterator value="%{#session.error.tweet}">
+				<s:property />
+				<br>
+			</s:iterator>
+		</s:if>
 	</s:if>
 </div>

@@ -16,24 +16,26 @@
 
 	<div class="subTitle">フォロー一覧</div>
 
-	<ul>
-		<s:iterator value="#session.follows">
-			<li><a
-				href=
-				"<s:url action='HomeAction'>
+	<s:if test="%{#session.follows.isEmpty()}">
+		<br>
+			フォローしている人がいません
+		</s:if>
+	<s:else>
+
+		<ul>
+			<s:iterator value="#session.follows">
+				<li><a
+					href="<s:url action='HomeAction'>
 				<s:param name="userId" value='id'/>
 				</s:url>"><s:property
-						value="name" /></a> &nbsp;
-				<a
-				href=
-				"<s:url action='DefollowAction'>
+							value="name" /></a> &nbsp; <a
+					href="<s:url action='DefollowAction'>
 				<s:param name='userId' value='id'/>
 				</s:url>">
-				フォロー解除
-				</a>
-			</li>
-		</s:iterator>
-	</ul>
+						フォロー解除 </a></li>
+			</s:iterator>
+		</ul>
+	</s:else>
 
 </body>
 </html>

@@ -53,6 +53,7 @@
 <!-- つぶやく -->
 		<action name="TweetAction" class="com.internousdev.whisker.action.TweetAction" method="execute">
 			<result name="success">toHome.jsp</result>
+			<result name="error">home.jsp</result>
 		</action>
 
 <!-- いいね -->

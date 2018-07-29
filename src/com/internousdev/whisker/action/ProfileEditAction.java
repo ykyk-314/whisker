@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.internousdev.whisker.dao.UserDAO;
 import com.internousdev.whisker.dto.UserDTO;
+import com.internousdev.whisker.util.InputChecker;
 import com.internousdev.whisker.util.UserUtil;
 
 public class ProfileEditAction extends BaseAction {
@@ -31,12 +32,12 @@ public class ProfileEditAction extends BaseAction {
 
 		UserDAO dao = new UserDAO();
 
-		if (name.length() == 0) {
-			putError("name", "1文字以上で入力してください");
+		if (InputChecker.length(name, 1, 16)) {
+			putError("name", "1文字から16文字で入力してください");
 		}
 
-		if (introductions.length() == 0) {
-			putError("introductions", "1文字以上で入力してください");
+		if (InputChecker.length(introductions, 1, 400)) {
+			putError("introductions", "1文字から400文字で入力してください");
 		}
 
 		if (photo != null && !photoContentType.equals("image/png")) {
@@ -49,7 +50,8 @@ public class ProfileEditAction extends BaseAction {
 				UserUtil.uploadPhoto(user.getId(), photo);
 			}
 
-			// データベース更新
+			introductions = InputChecker.htmlEscape(introductions);
+
 			if (dao.update(user.getId(), name, introductions)) {
 
 				user = dao.select(user.getLoginId(), user.getPassword());
