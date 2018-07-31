@@ -215,7 +215,7 @@ public class UserDAO {
 
 		Connection connection = DBConnector.getConnection();
 
-		String sql= "SELECT * FROM users WHERE name LIKE '%" + name + "%' AND id NOT IN (" + ignoreUserId + ")";
+		String sql= "SELECT * FROM users WHERE name LIKE '%" + name + "%' AND id NOT IN (" + ignoreUserId + ") LIMIT 50";
 
 		List<UserDTO> result = new ArrayList<UserDTO>();
 

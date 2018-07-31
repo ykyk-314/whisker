@@ -61,6 +61,8 @@ public class BaseAction  extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session){
 		this.session = session;
 
+		clearError();
+
 		if (session.containsKey("action")) {
 			String action = (String)session.get("action");
 			session.put("preAction", action);

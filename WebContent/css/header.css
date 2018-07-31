@@ -2,70 +2,195 @@
 /* ヘッダー */
 
 /* 全体設定 */
-header {
-	width: 100%;
-	height: 55px;
-	background-color: #35ceaf;
-	font-size: 30px;
+.MENU{
+	background-color : #fff;
+	width:100%;
+	height: 100px;
+	margin:0 auto;
+/* 	position: relative; */
+
+}
+
+.menuBand{
+	width:100%;
+	height:100px;
+	background-color:#fff;
+}
+.menu{
+	width:1000px;
+	height:100px;
+	margin:0 auto;
+	background-color:#fff;
+}
+.menu a{
+	text-decoration:none;
+	outline: 0;
+
+}
+
+/* ロゴ側設定 */
+.logoLine{
+	float:left;
+	list-style:none;
+	z-index: 5;
+}
+
+.logoLine img{
+	pading:0;
+
+}
+
+.cat{
+	padding:20px 0 0 0;
+	width:100px;
+	height:75px;
+
 }
 
 .logo {
-	width: 150px;
-	height: 55px;
-	padding-bottom: 10px;
+	padding:30px 0 0 0;
+	width: 200px;
+	height: 73px;
 }
 
-.iconBand {
+.logo:hover {
+	transform: scaleX(1.2);
+}
+
+
+/* アイコン側設定 */
+.iconLine{
 	float: right;
 	list-style: none;
-	margin-top: 0px;
-	margin-right: 10px;
+	z-index: 5;
 }
 
-header ul li {
+.iconLine li{
 	float: left;
 }
 
-/* 個別設定 */
-.link {
-	text-decoration: none;
-}
-
+/* 各アイコン */
 .searchBox {
-	margin-top: 5px;
-	width: 180px;
-	height: 40px;
-	border:1.3px inset #cfcfcf;
+	margin-top: 25px;
+	margin-right: 25px;
+	width: 200px;
+	height: 50px;
+	border: 3px inset #ababab;
 	font-size: 20px;
-	border-radius: 20px;
+	border-radius: 30px;
+	padding-left: 10px;
+	padding-right: 45px;
 }
 
 .seach_btn {
-
 	border: none;
 	cursor: pointer;
 	padding: 0;
-	font-size: 30px;
-	margin-left: -45px;
+	font-size: 25px;
+	margin-left: -70px;
 	background: none;
 }
 
-.search img {
-	width: 30px;
-	height: 30px;
-	padding: 0;
-	margin-left: 20px;
-/* 	background: url(./images/search.png) left top no-repeat;
- */
+.iconLine img {
+	width: 80px;
+	height: 80px;
+	padding: 10px 0 0 0;
+	margin-right: 30px;
+	vertical-align: center;
+
 }
 
-.iconBand img {
-	width: 50px;
-	height: 50px;
-	padding: 0;
-	margin-right: 20px;
-}
-
-img:hover {
+.iconLine img:hover {
 	opacity: 0.5;
+	transition-duration: 0.2s;
+	transform: rotate(360deg);
+}
+
+
+
+
+/* 背景設定 */
+header #WhiteKey {
+	width:100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 1;
+	/*
+	margin-right:10px; */
+}
+
+#WhiteKey .whiteKey {
+	width: 40px;
+	height: 99px;
+	border: 0.8px outset #a3a3a3;
+	background-color: #fff;
+	display: inline-block;
+	margin-left: -10px;
+	z-index: 1;
+}
+
+header #BlackKey {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+#BlackKey .blackKey {
+	width: 20px;
+	height: 40px;
+	border: 0.8px outset #848484;
+	background-color: #909090;
+	display: inline-block;
+}
+
+#BlackKey  .Cs {
+	margin-left: 20px;
+}
+
+#BlackKey  .Ds, .Gs, .As, .HDs, .HGs, .HAs {
+	margin-left: 10px;
+}
+
+#BlackKey  .Fs {
+	margin-left: 53px;
+}
+
+#BlackKey .HCs {
+	margin-left: 51px;
+}
+
+#BlackKey .HFs {
+	margin-left: 52px;
+}
+
+.whiteKey:active, .blackKey:active {
+	transform: translateY(2px);
+}
+
+.details {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 300px;
+	width: 500px;
+	height: 100px;
+	font-size: 14px;
+	background-color: #f7f7f7;
+	border: 0.5px inset #179151; z-index : 9;
+	line-height: 0;
+	z-index: 9;
+}
+
+.POP:hover+.details {
+	display: inline-block;
+}
+
+.details img {
+	width: 15px;
+	height: 15px;
 }

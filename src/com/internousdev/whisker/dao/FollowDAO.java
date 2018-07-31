@@ -48,6 +48,43 @@ public class FollowDAO {
 		return result;
 	}
 
+
+
+	public List<Integer> select(int userId){
+
+		Connection connection = DBConnector.getConnection();
+
+		String sql= "SELECT target_user_id FROM follows WHERE user_id = ?";
+
+		List<Integer> result = new ArrayList<>();
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, userId);
+
+			System.out.println(preparedStatement.toString());
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()){
+				Integer targetUserId = resultSet.getInt("target_user_id");
+				result.add(targetUserId);
+			}
+
+		}catch(SQLException e){
+			e.printStackTrace();
+			result = null;
+		}
+
+		try{
+			connection.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+
 	/*
 	userIdがtargetUserIdをフォローしているか
 	*/

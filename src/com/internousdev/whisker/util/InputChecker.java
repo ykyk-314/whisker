@@ -7,6 +7,35 @@ public class InputChecker {
 		return min <= value.length() && value.length() <= max;
 	}
 
+	public static boolean regex(String value, RegexDesc desc){
+
+		if (value == null) return false;
+		if (!desc.is()) return false;
+
+		String regex = "";
+
+		regex += "^[";
+
+		if (desc.isHalfNumber()) regex += "0-9";
+		if (desc.isFullNumber()) regex += "０-９";
+		if (desc.isHalfAlphabet()) regex += "a-z";
+		if (desc.isFullAlphabet()) regex += "A-Z";
+		if (desc.isHiragana()) regex += "ぁ-ん";
+		if (desc.isKatakana()) regex += "ァ-ヺ";
+		if (desc.isKanji()) regex += "一-龯";
+		if (desc.isHalfSymbol()) regex += "@.,;:!#$%&'*+-/=?^_`{|}~";
+		if (desc.isFullSymbol()) regex += "＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～";
+		if (desc.isHalfSpace()) regex += " ";
+		if (desc.isFullSpace()) regex += "　";
+		if (desc.getCustom() != null){
+			regex += desc.getCustom();
+		}
+
+		regex += "]+$";
+
+		return value.matches(regex);
+	}
+
 	public static String htmlEscape(String text) {
 
         StringBuffer sb=new StringBuffer();

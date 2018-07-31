@@ -2,6 +2,8 @@ package com.internousdev.whisker.dto;
 
 import java.sql.Date;
 
+import com.internousdev.whisker.util.InputChecker;
+
 public class TweetDTO {
 
 	private int id;					// ID
@@ -31,6 +33,10 @@ public class TweetDTO {
 
 	public String getContent() {
 		return content;
+	}
+
+	public String getEscapeContent() {
+		return InputChecker.htmlEscape(content);
 	}
 
 	public void setContent(String content) {

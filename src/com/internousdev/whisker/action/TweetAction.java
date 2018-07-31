@@ -3,6 +3,7 @@ package com.internousdev.whisker.action;
 import com.internousdev.whisker.dao.TweetDAO;
 import com.internousdev.whisker.dto.UserDTO;
 import com.internousdev.whisker.util.InputChecker;
+import com.internousdev.whisker.util.RegexDesc;
 import com.internousdev.whisker.util.TweetUtil;
 
 public class TweetAction extends BaseAction {
@@ -10,8 +11,6 @@ public class TweetAction extends BaseAction {
 	private String message;
 
 	public String execute() throws Exception{
-
-		clearError();
 
 		UserDTO user = (UserDTO)session.get("user");
 
@@ -21,7 +20,9 @@ public class TweetAction extends BaseAction {
 			putError("tweet", "1文字から200文字で入力してください。");
 		}
 
-		message = InputChecker.htmlEscape(message);
+		if (!InputChecker.regex(message, RegexDesc.format(RegexDesc.CUSTOM1))){
+			putError("tweet", "使用不可文字が含まれています");
+		}
 
 		if (isError()){
 			return "error";

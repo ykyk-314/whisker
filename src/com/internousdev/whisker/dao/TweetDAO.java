@@ -44,17 +44,61 @@ public class TweetDAO {
 		return result;
 	}
 
-	public List<TweetDTO> select(int userId){
+	public List<TweetDTO> select(int userId, int limit){
 
 		Connection connection = DBConnector.getConnection();
 
-		String sql= "SELECT t.id, t.user_id, t.content, t.like_count, t.created_at, t.updated_at, u.name FROM tweets t LEFT JOIN users u ON t.user_id = u.id WHERE t.user_id = ? ORDER BY t.id DESC";
+		String sql= "SELECT t.id, t.user_id, t.content, t.like_count, t.created_at, t.updated_at, u.name FROM tweets t LEFT JOIN users u ON t.user_id = u.id WHERE t.user_id = ? ORDER BY t.id DESC LIMIT ?";
 
 		List<TweetDTO> result = new ArrayList<>();
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, userId);
+			preparedStatement.setInt(2, limit);
+
+			System.out.println(preparedStatement.toString());
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()){
+				TweetDTO dto = toDto(resultSet);
+				result.add(dto);
+			}
+
+		}catch(SQLException e){
+			result = null;
+			e.printStackTrace();
+		}
+
+		try{
+			connection.close();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	public List<TweetDTO> select(List<Integer> userIdList, int limit){
+
+		List<TweetDTO> result = new ArrayList<>();
+		if (userIdList == null || userIdList.size() == 0) return result;
+		if (userIdList.size() == 1) return select(userIdList.get(0), limit);
+
+		String sql = "SELECT t.id, t.user_id, t.content, t.like_count, t.created_at, t.updated_at, u.name FROM tweets t LEFT JOIN users u ON t.user_id = u.id WHERE";
+
+		sql += " t.user_id = " + userIdList.get(0);
+		for (int i = 1; i < userIdList.size(); i++){
+
+			sql += " OR t.user_id = " + userIdList.get(i);
+		}
+
+		sql += " ORDER BY t.id DESC LIMIT " + limit;
+
+		Connection connection = DBConnector.getConnection();
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
 			System.out.println(preparedStatement.toString());
 			ResultSet resultSet = preparedStatement.executeQuery();

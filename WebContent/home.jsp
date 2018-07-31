@@ -10,14 +10,16 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+
+
 	<div id="main" class="cf">
 
-		<div id="sub_column">
+		<div id="profileSide">
 			<jsp:include page="profile.jsp" />
 		</div>
 		<!-- notImg  <i class="far fa-user-circle"></i> -->
 
-		<div id="main_column">
+		<div id="tweetSide">
 			<jsp:include page="tweetField.jsp" />
 			<jsp:include page="tweetView.jsp" />
 		</div>

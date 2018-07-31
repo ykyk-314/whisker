@@ -12,7 +12,11 @@
 <title>login</title>
 </head>
 <body>
+	<div class="backImg1"></div>
+	<div class="backImg2"></div>
+	<div class="backImg3"></div>
 	<h1 class="subTitle">Whisker へログイン</h1>
+
 	<s:form class="Form" action="LoginAction">
 
 		<ul class="input">
