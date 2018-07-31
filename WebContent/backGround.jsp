@@ -5,10 +5,14 @@
 	href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 <link rel="stylesheet" href="./css/header.css">
 <script>
+var=.whiteKey
+for(var i=1;i<=30;i++){
+	.document.write(i);
+}
 
 </script>
 
-<header>
+<div id="BACK">
 
 	<div id="WhiteKey">
 		<div class="whiteKey"></div>
@@ -35,6 +39,12 @@
 		<div class="whiteKey"></div>
 		<div class="whiteKey"></div>
 		<div class="whiteKey"></div>
+		<div class="whiteKey"></div>
+		<div class="whiteKey"></div>
+		<div class="whiteKey"></div>
+		<div class="whiteKey"></div>
+		<div class="whiteKey"></div>
+
 	</div>
 	<div id="BlackKey">
 		<div class="blackKey Cs"></div>
@@ -56,4 +66,4 @@
 			</p>
 		</div>
 	</div>
-</header>
+</div>

@@ -3,13 +3,15 @@
 /* *** 入力フォーム共通CSS *** */
 /* 画面タイトル */
 .subTitle {
+	margin-top:30px;
 	text-align: center;
 	font-size: 30px;
-	color: #35ceaf;
+	color: #004080;
 }
 
 /* フォームボックス */
 .Form {
+	padding-top:10px;
 	text-align: center;
 	margin-left: -30px;
 	z-index:20;
@@ -28,6 +30,7 @@
 	list-style: none;
 }
 .label {
+	padding-top:30px;
 	text-align: left;
 	margin-left: 70px;
 	margin-bottom: -10px;

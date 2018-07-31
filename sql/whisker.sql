@@ -20,11 +20,10 @@ create table users(
 
 insert into users(login_id, password, name, introductions, created_at, updated_at) values
 ("guest", "guest", "ゲスト", "紹介文", now(), now()),
-("negishi", "ayaka", "NegishiAyaka", "プログラム大好き女子！空いている時間は全部プログラムの勉強してます！デザインにも興味津々！", now(), now()),
-("endo", "takahiro", "EndoTakahiro", "ゲームプログラマー、使用可能言語・C＃、C言語、Java、JavaScript、PHP、C++、VBA、BASIC、HTML、CSS", now(), now()),
+("negishi", "ayaka", "NeGi", "プログラム大好き女子！空いている時間は全部プログラムの勉強してます！デザインにも興味津々！", now(), now()),
+("endo", "takahiro", "ENDO", "ゲームプログラマー、使用可能言語・C＃、C言語、Java、JavaScript、PHP、C++、VBA、BASIC、HTML、CSS", now(), now()),
 ("nakayama", "eri", "NakayamaEri", "デザイン担当女子！いつもニコニコしてて、何を言っても笑っちゃいます！ツボが浅いことが取り柄！", now(), now()),
-("yokoyama", "takahiro", "YokoyamaTakahiro", "最近ブラックな一面が出てしまうことが悩み・・・", now(), now()),
-("kubota", "kyosuke", "KubotaKyosuke", "自分は、お父さん的な存在です！チーム制作でもリーダーに抜擢されました！", now(), now());
+("kubota", "kyosuke", "KubotaKyosuke", "自分は、お父さん的な存在です！", now(), now());
 
 
 
@@ -41,23 +40,18 @@ create table tweets(
 
 insert into tweets(user_id, content, created_at, updated_at) values
 (1, "初めまして！", now(), now()),
-(1, "Gap_Timeアカウント作成しました！", now(), now()),
-(1, "フォローしてください！", now(), now()),
+(1, "アカウント作成しました！", now(), now()),
+(1, "フォローお願いします！", now(), now()),
 (2, "オブジェクト指向に明確な説明はない・・・", now(), now()),
 (2, "MySQLとは、世界でもっとも利用されている「データベース管理システム」です。", now(), now()),
 (2, "SQLインジェクションとは、アプリケーションのセキュリティ上の不備を意図的に利用し、アプリケーションが想定しないSQL文を実行させることにより、データベースシステムを不正に操作する攻撃方法のこと。", now(), now()),
 (3, "ラーメン食べたい", now(), now()),
 (3, "ラーメンの味で一番好きなのは「醤油」", now(), now()),
 (3, "カップ麺が一押し", now(), now()),
-(4, "ダンス仲間募集してます！", now(), now()),
-(4, "たまに、すごい寝相になっちゃいます・・・", now(), now()),
+(4, "GitPushしました", now(), now()),
 (4, "今日誰か映画見に行こー！", now(), now()),
 (5, "純粋な心に戻りたい・・・", now(), now()),
-(5, "少年のような心に戻りたい・・", now(), now()),
-(5, "ホワイトの心を取り戻したい・・・", now(), now()),
-(6, "チーム内で最年長・・・。就活不安・・", now(), now()),
-(6, "家の中では、綾波レイになりきってます。", now(), now()),
-(6, "焼肉食べたい", now(), now());
+(5, "少年のような心に戻りたい・・", now(), now());
 
 -- フォロー
 create table follows(
@@ -73,24 +67,19 @@ create table follows(
 insert into follows(user_id, target_user_id, created_at, updated_at) values
 (1, 2, now(), now()),
 (1, 5, now(), now()),
-(1, 6, now(), now()),
+(1, 3, now(), now()),
 (2, 1, now(), now()),
 (2, 5, now(), now()),
-(2, 6, now(), now()),
+(2, 3, now(), now()),
 (3, 1, now(), now()),
 (3, 2, now(), now()),
 (3, 4, now(), now()),
 (3, 5, now(), now()),
-(3, 6, now(), now()),
 (4, 1, now(), now()),
 (4, 2, now(), now()),
 (4, 3, now(), now()),
 (4, 5, now(), now()),
-(4, 6, now(), now()),
 (5, 3, now(), now()),
 (5, 1, now(), now()),
-(5, 6, now(), now()),
-(6, 3, now(), now()),
-(6, 1, now(), now()),
-(6, 4, now(), now()),
+(5, 4, now(), now()),
 (1, 4, now(), now());

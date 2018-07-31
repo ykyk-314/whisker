@@ -17,6 +17,20 @@ public class HomeAction extends BaseAction {
 		UserDTO profile = null;
 		boolean isFollowing = false;
 
+
+		String preAction = (String)session.get("preAction");
+		if (preAction.equals("LikeAction")) {
+			profile = (UserDTO)session.get("profile");
+
+			if (session.containsKey("home")){
+				if (!(boolean)session.get("home")){
+					userId = String.valueOf(profile.getId());
+				}
+			}
+		}
+
+		session.put("home", false);
+
 		if (userId != null){
 			UserDAO userDao = new UserDAO();
 			profile = userDao.select(Integer.parseInt(userId));
@@ -36,6 +50,7 @@ public class HomeAction extends BaseAction {
 			List<Integer> list = followDao.select(user.getId());	// フォローしている人のIDを取得
 			list.add(user.getId());		// 自身のIDを追加
 			TweetUtil.select(list, session);
+			session.put("home", true);
 		}
 
 		boolean isUser = user.getId() == profile.getId();

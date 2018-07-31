@@ -5,17 +5,19 @@
 	href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 <link rel="stylesheet" href="./css/header.css">
 
+
+
 <header>
 
+
 	<div class="MENU">
-		<%--
-	<jsp:include page="backGround.jsp" /> --%>
 
 		<div class="menuBand">
 			<div class="menu">
 				<ul class="logoLine">
 					<li><img src="./images/cat.png" class="cat"> <a
-						href="HomeAction"><img src="./images/whisker02.png" class="logo"></a></li>
+						href="HomeAction"><img src="./images/whisker02.png"
+							class="logo"></a></li>
 				</ul>
 				<ul class="iconLine">
 					<li><s:form action="SearchUserAction">
@@ -29,9 +31,12 @@
 							src="./images/exit.png"></a></li>
 				</ul>
 
+
 			</div>
+
 		</div>
 	</div>
+			<jsp:include page="backGround.jsp" />
 	<%-- <s:submit value="" class="seach_btn" /> --%>
 
 </header>

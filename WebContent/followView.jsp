@@ -14,7 +14,7 @@
 
 	<jsp:include page="header.jsp" />
 
-	<div class="subTitle">フォロー一覧</div>
+	<div class="subTitle">FOLLOW LIST</div>
 
 	<s:if test="%{#session.follows.isEmpty()}">
 		<br>
@@ -22,17 +22,18 @@
 		</s:if>
 	<s:else>
 
-		<ul>
+		<ul class="listBox">
 			<s:iterator value="#session.follows">
-				<li><a
+				<li class="list"><a
 					href="<s:url action='HomeAction'>
 				<s:param name="userId" value='id'/>
-				</s:url>"><s:property
-							value="name" /></a> &nbsp; <a
+				</s:url>"
+					class="users"><s:property value="name" /></a></li>
+				<li class="kat"><a
 					href="<s:url action='DefollowAction'>
 				<s:param name='userId' value='id'/>
-				</s:url>">
-						フォロー解除 </a></li>
+				</s:url>"
+					class="defo"> フォロー<br>解除 </a></li>
 			</s:iterator>
 		</ul>
 	</s:else>
