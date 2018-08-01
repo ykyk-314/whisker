@@ -39,11 +39,14 @@ for(var i=1;i<=30;i++){
 		<div class="whiteKey"></div>
 		<div class="whiteKey"></div>
 		<div class="whiteKey"></div>
-		<div class="whiteKey"></div>
-		<div class="whiteKey"></div>
-		<div class="whiteKey"></div>
-		<div class="whiteKey"></div>
-		<div class="whiteKey"></div>
+		<div class="whiteKey end8"></div>
+		<div class="whiteKey end7"></div>
+		<div class="whiteKey end6"></div>
+		<div class="whiteKey end5"></div>
+		<div class="whiteKey end4"></div>
+		<div class="whiteKey end3"></div>
+		<div class="whiteKey end2"></div>
+		<div class="whiteKey end1"></div>
 
 	</div>
 	<div id="BlackKey">
@@ -53,17 +56,20 @@ for(var i=1;i<=30;i++){
 		<div class="blackKey Gs"></div>
 		<div class="blackKey As"></div>
 
-		<div class="blackKey HCs POP"></div>
+		<div class="blackKey HCs"></div>
 		<div class="blackKey HDs"></div>
 		<div class="blackKey HFs"></div>
 		<div class="blackKey HGs"></div>
 		<div class="blackKey HAs"></div>
-		<div class="details">
-			<p>Whisker...猫の髭の意。</p>
-			<p>テキストボックスに好きなことを書いてつぶやこう。つぶやく時はみゅーと泣く。</p>
-			<p>
-				いいね！と思ったら肉球をポチ<img src="./images/pets.png">
-			</p>
-		</div>
+
+		<div class="blackKey HCs"></div>
+		<div class="blackKey HDs"></div>
+
+		<div class="blackKey HFs"></div>
+		<div class="blackKey HGs"></div>
+		<div class="blackKey HAs"></div>
+
+		<div class="blackKey HCs"></div>
+		<div class="blackKey HDs"></div>
 	</div>
 </div>

@@ -23,17 +23,21 @@
 
 	<s:else>
 
-		<ul class="listBox">
+		<div class="listBox">
 			<s:iterator value="#session.search">
+				<ul class="person">
+					<li class="followImg"><img
+						src="<s:property value='%{photoPath}' />" /></li>
 
-				<li class="list"><a
-					href="<s:url action='HomeAction'>
+					<li class="list"><a
+						href="<s:url action='HomeAction'>
 					<s:param name='userId' value='id'/></s:url>"
-					class="users"> <s:property value="name" />
-				</a></li>
-
+						class="users"> <s:property value="name" />
+					</a></li>
+				</ul>
+				<div class="clear"></div>
 			</s:iterator>
-		</ul>
+		</div>
 	</s:else>
 </body>
 </html>

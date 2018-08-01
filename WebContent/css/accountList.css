@@ -30,10 +30,60 @@
 }
 
 .listBox {
-	list-style: none;
 	font-size: 20px;
+	margin-left: 200px;
+	width: 800px;
+	border: 2px solid #333;
+	background: #fff;
 }
 
+.person{
+	margin:5px;
+	height: 180px;
+	width:790px;
+	border:1px groove #f7f7f7;
+}
+.person:hover{
+	border:2px ridge #f7f7f7;
+}
+
+
+.listBox li {
+	list-style: none;
+	padding: 10px;
+	float: left;
+}
+
+
+.listBox .list {
+	font-size: 50px;
+	line-height: 130px;
+}
+
+.listBox .list a {
+	text-decoration: none;
+	color: #33a868;
+}
+
+.listBox .kat {
+	float: right;
+	line-height: 180px;
+}
+
+.listBox .kat a {
+	text-decoration: none;
+	color: #6ad7df;
+}
+
+.listBox .kat a:hover {
+	color: #ff0080;
+}
+
+.clear {
+	clear: both;
+}
+
+/*
 .list {
 	margin-left: 100px;
 	margin-top: 20px;
@@ -66,5 +116,5 @@
 
 	color: red;
 	font-size: 20px;
-	text-decoration: none;
+	text-decoration: none; */
 }

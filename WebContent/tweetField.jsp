@@ -7,7 +7,7 @@
 
 	<s:if test="%{#session.user.id == #session.profile.id}">
 		<s:form action="TweetAction">
-			<s:textarea name="message" class="text" placeholder="200字以内で"/>
+			<s:textarea name="message" class="text" placeholder="いま何してる？"/>
 			<s:submit value="MEW!" class="submit_btn" />
 		</s:form>
 

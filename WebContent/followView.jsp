@@ -22,20 +22,31 @@
 		</s:if>
 	<s:else>
 
-		<ul class="listBox">
+		<div class="listBox">
+
 			<s:iterator value="#session.follows">
-				<li class="list"><a
-					href="<s:url action='HomeAction'>
+				<ul class="person">
+					<li class="followImg"><img
+						src="<s:property value='%{photoPath}' />" /></li>
+
+					<li class="list"><a
+						href="<s:url action='HomeAction'>
 				<s:param name="userId" value='id'/>
 				</s:url>"
-					class="users"><s:property value="name" /></a></li>
-				<li class="kat"><a
-					href="<s:url action='DefollowAction'>
+						class="users"><s:property value="name" /></a></li>
+
+					<li class="kat"><a
+						href="<s:url action='DefollowAction'>
 				<s:param name='userId' value='id'/>
 				</s:url>"
-					class="defo"> フォロー<br>解除 </a></li>
+						class="defo"> フォロー解除 </a></li>
+
+
+				</ul>
+				<div class="clear"></div>
 			</s:iterator>
-		</ul>
+		</div>
+
 	</s:else>
 
 </body>

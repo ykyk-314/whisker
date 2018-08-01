@@ -14,10 +14,11 @@
 	width: 1000px;
 	height: 100px;
 	z-index:8;
+	margin-left:150px;
 }
 
 .menu {
-	width: 1000px;
+	width: 100%;
 	height: 100px;
 	margin: 0 auto;
 	z-index:7;
@@ -37,7 +38,7 @@
 }
 
 .logoLine a{
-	padding:-30px;
+	padding:30px;
 }
 
 .cat {
@@ -47,7 +48,7 @@
 
 .logo {
 	width: 200px;
-	height: 73px;
+	height: 80px;
 	vertical-line: bottom;
 }
 
@@ -115,7 +116,7 @@
 }
 
 #WhiteKey {
-	width: 1400px;
+	width: 1200px;
 /* 	position: absolute;
 	top: 0; */
 	overflow: hidden;
@@ -130,10 +131,11 @@
 	background-color: #fff;
 	display: inline-block;
 	margin-left: -10px;
+		overflow: hidden;
 }
 
 #BlackKey {
-	width: 1400px;
+	width: 1000px;
 	overflow: hidden;
 	position: absolute;
 	top: 0;
@@ -157,42 +159,40 @@
 }
 
 #BlackKey  .Fs {
-	margin-left: 53px;
+	margin-left: 45px;
 }
 
 #BlackKey .HCs {
-	margin-left: 51px;
+	margin-left: 48px;
 }
 
 #BlackKey .HFs {
-	margin-left: 52px;
+	margin-left: 45px;
 }
 
-.whiteKey:active, .blackKey:active {
-	transform: translateY(2px);
+.end1{
+	opacity:0.1;
 }
-
-.details {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 300px;
-	width: 500px;
-	height: 100px;
-	font-size: 14px;
-	background-color: #f7f7f7;
-	border: 0.5px inset #179151;
-	z-index: 9;
-	line-height: 0;
-	z-index: 9;
+.end2{
+	opacity:0.2;
 }
-
-.POP:hover+.details {
-	display: inline-block;
+.end3{
+	opacity:0.3;
 }
-
-.details img {
-	width: 15px;
-	height: 15px;
+.end4{
+	opacity:0.4;
 }
-
+.end5{
+	opacity:0.5;
+}
+.end6{
+	opacity:0.6;
+}
+.end7{
+	border-color:#d4d4d4;
+	opacity:0.7;
+}
+.end8{
+	border-color:#c0c0c0;
+	opacity:0.8;
+}

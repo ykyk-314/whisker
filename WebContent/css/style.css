@@ -40,7 +40,7 @@ body{
 #main {
 	clear: both;
 	margin: 0 auto;
-	width:1000px;
+	width:1200px;
 
 }
 
@@ -48,6 +48,7 @@ body{
 	width: 320px;
 	float: left;
 	margin-top:25px;
+	margin-left:100px;
 	background-color: #fbfbfb;
 	border: 3.5px ridge #008080;
 	border-radius: 5px;

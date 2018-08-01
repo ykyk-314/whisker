@@ -36,7 +36,7 @@
 
 		</div>
 	</div>
-			<jsp:include page="backGround.jsp" />
+	<jsp:include page="backGround.jsp" />
 	<%-- <s:submit value="" class="seach_btn" /> --%>
 
 </header>
